@@ -1,0 +1,88 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List</title>
+    <link rel="stylesheet" href="/css/animate.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/jquery-3.6.4.min.js" defer></script>
+    <script src="/js/To-do.js?v1" defer></script>
+
+    <style>
+        .done {
+            text-decoration: line-through;
+            color: grey;
+        }
+
+    </style>
+</head>
+<body style="background-color: #333;">
+    <div class="section mt-5">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-12 col-md-8">
+                    <div id="main" class="card">
+                        <div class="card-body">
+                            <h1 style="text-align: center;"> To-do List </h1>
+                            <form class="animate__animated animate__rubberBand" id="taskForm" autocomplete="off" method="post">
+                                <div class="form-group"> <label for="task">New To Do</label> <input type="text" class="form-control" name="task" id="task" placeholder="What to do" required></div> <br> <button type="submit" class="btn btn-outline-dark mt-2" id="ekle">Add To Do </button>
+                            </form>
+                            <hr>
+
+                            <div class="form-group"> <label for="filter">Filter tasks</label> <br> <input type="email" class="form-control" name="filter" id="filter" placeholder=" Task ..."> </div>
+                            <br>
+                            <h5> Tasks </h5>
+
+                            <div class="list-group " id="todoList">
+
+                     
+ 
+                            </div>
+                            <button id="all" class="clear-tasks btn btn-outline-secondary mt-3">Select All</button>
+                            <button type="submit" class="clear-tasks btn btn-outline-danger mt-3" id="clear"> Clear Tasks</button>
+                            
+                        </div>
+                       
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                            <div class="offcanvas-header ">
+                                <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <div class="card-body">
+                      <h5 class="card-title todoDetailTitle">Yapılacak iş</h5>
+                      <p class="card-tex todoDetailDesc"></p>
+                      
+                      <div style="display: none;" class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Detay</label>
+                        <textarea class="form-control todoDetailDescForm" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="inputTodoTamamlanmaTarihi" class="form-label">Tamamlanma Tarihi</label>
+                        <input min="2023-06-07T00:00" max="2023-12-30T00:00" type="datetime-local" class="form-control todoDetailDueDate" id="inputTodoTamamlanmaTarihi" placeholder="Tamamlanma Tarihi">
+                      </div>
+                      
+                      <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                        <button type="button" class="btn btn-success">Güncelle</button>
+                        <button type="button" class="btn btn-danger">Sil</button>
+                      </div>
+                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

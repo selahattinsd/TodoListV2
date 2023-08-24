@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\TodosV2.props" />
+</Project>
